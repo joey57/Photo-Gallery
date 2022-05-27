@@ -6,5 +6,6 @@ from .models import Image, Category, Location
 
 def index(request):
     images = Image.get_all_images()
+    locations = Location.objects.all()
 
-    return render(request, 'index.html', {'images':images})
+    return render(request, 'index.html', {'images':images, 'images':images, 'locations':locations })
