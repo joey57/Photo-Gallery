@@ -10,6 +10,10 @@ def index(request):
 
     return render(request, 'index.html', {'images':images, 'images':images, 'locations':locations })
 
+def about(request):
+    title = 'ABOUT'
+    return render(request, 'about.html', {'title':title})    
+
 def search_image(request):
     title = 'Search'
     categories = Category.objects.all()
@@ -29,6 +33,13 @@ def location_filter(request, image_location):
     images = Image.filter_by_location(image_location)
     title = f'{location} Photos'
     return render(request, 'location.html', {'title':title, 'images':images, 'locations':locations, 'location':location})
+
+def single(request,image_id):
+    try:
+        image = Image.objects.get(id = image_id)
+    except:
+        raise Http404()
+    return render(request,"index.html",{"image":image})
 
 
 
