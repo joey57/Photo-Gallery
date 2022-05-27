@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from django.http  import HttpResponse, Http404
-from django.shortcuts import render, redirect
+from .models import Image, Category, Location
 
 # Create your views here.
 
 def index(request):
-    title = 'Gallery'
+    images = Image.get_all_images()
 
-    return render(request, 'index.html', {'title':title})
+    return render(request, 'index.html', {'images':images})
