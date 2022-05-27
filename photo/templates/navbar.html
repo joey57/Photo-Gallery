@@ -1,39 +1,40 @@
+{% load django_bootstrap5 %}
+{% load static%}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title></title>
-    </head>
-    <body>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-       <a class="navbar-brand" href="#">GALL-ART</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  {% block styles %}
+   {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  {% endblock %}
+ </head>
+  <body>
+     <!-- Main Navbar -->
+     <nav class="navbar navbar-expand-lg navbar-light" id="navMain">
+      <div class="container navigation header_right wow fadeInLeft animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+      <a class="navbar-brand" href="/"> Gall-Art</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active"><a class="nav-link" href="/"> HOME <span class="sr-only">(current)</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="/" data-toggle="modal" data-target="#about">ABOUT</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#category">CATEGORY</a></li>
+          <li class="nav-item"><a class="nav-link open-nav" style="cursor:pointer">LOCATION</a></li>
+        </ul>
+        <ul class="navbar-nav left">
+        <a class="nav-item nav-link ml-auto social" href="" target="_blank"></a>
+      </ul>
+      </div>
+  </nav>
+  <!-- End of main navbar -->
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dropdown link
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-            </ul>
-          </div>
 
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </nav>
-    </body>
+<!-- End of side navbar -->
+   
+</body>
 </html>
