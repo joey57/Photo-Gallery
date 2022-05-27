@@ -1,13 +1,24 @@
 /*Landing page styles*/
+html, body{
+  font-family: 'Raleway', sans-serif;
+  font-size: 100%;
+
+}
 div.container.image{
   padding: 6em 0 0;
 }
 .banner h2{
   padding-bottom: 20px;
+  color: bisque;
+}
+.banner p{
+  padding-bottom:  20px;
+  color: white;
+
 }
 
 .banner{
-  background: url(../assets/coverp.jpg) no-repeat 0px 0px;
+  background: url(../assets/cover.jpg) no-repeat 0px 0px;
   background-size:cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
@@ -15,3 +26,15 @@ div.container.image{
   -moz-background-size: cover;
   min-height: 400px;
 }  
+form.form{
+  width: 70%;
+  border-radius: 0px;
+  height: 50px;
+  margin: 0 auto;
+}
+input.form-control{
+  width: 70%;
+  border-radius: 0px;
+  height: 40px;
+  font-family: 'Font Awesome 5 Brands' !important;
+}
