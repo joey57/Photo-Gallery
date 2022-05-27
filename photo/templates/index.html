@@ -5,11 +5,11 @@
 {{block.super}}
 
 <!--Landing section -->
-<div class="banner" src="static/assets/coverp.jpg">
+<div class="banner">
   <div class="cover">
     <div class="container image">
       <h2 id="category">Welcome to Gall-Art</h2>
-      <form class="form" role="search" action="">
+      <form class="form" role="search" action="{% url 'search_image' %}">
 
         <div class="input-group">
           <input type="text" class="form-control" placeholder="&#xf3ee; Search by category" name="image_category">
@@ -28,21 +28,19 @@
   <div class="row">
   {% for image in images %}
 
-      <!-- displaying News articles -->
-       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-           <h2 class="text-center">{{ image.name}} </h2>
-           <p>{{image.description}}</p>
-           <p>{{image.image_location.name}}</p>
-           <p>{{image.image_category.name}}</p>
+<!-- displaying Images -->
+<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+ <h2 class="text-center">{{ image.name}} </h2>
+ <p>{{image.description}}</p>
+ <p>{{image.image_location.name}}</p>
+ <p>{{image.image_category.name}}</p>
 
-           <!-- Displaying news Article images -->
-           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
-               <!-- <button type="button" class="btn btn-success btn-sm m-1" > Delete</button> -->
-               <img src="{{image.pic.url}}" class="img-thumbnail" alt="Image" data-toggle="modal" data-target="#deleteModal">
-           </div>
-       </div>
-       {% for image in images %}
-       <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
+<img src="{{image.pic.url}}" class="img-thumbnail" alt="Image" data-toggle="modal" data-target="#deleteModal">
+</div>
+</div>
+{% for image in images %}
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
               <div class="modal-content">
                   <div class="modal-header">
@@ -66,26 +64,20 @@
                       </div>
                   </div>
                   <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Copy Link</button>
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   </div>
               </div>
           </div>
       </div>
-          {% endfor %}
-
+    {% endfor %}         
 
   {% empty %}
 </div>
-  <div class="row">
-      <h2 class="text-center"> No image </h2>
-
-  </div>
+<div class="row">
+ <h2 class="text-center"> No image </h2>
+</div>
   {% endfor %}
-
 </div>   
-
-             
 
 {% endblock %} 

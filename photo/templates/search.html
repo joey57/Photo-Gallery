@@ -13,12 +13,9 @@
 
         {% else %}
         <h2>Found 0 articles for the search term {{message}}</h2>
-
         {% endif %}
-
         <div class="container imageloc">
-            <form class="form" role="search" action="{% url 'search_image' %}">
-
+          <form class="form" role="search" action="{% url 'search_image' %}">
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="&#xf3ee; Search by category"name="image_category">
                   <br>
@@ -38,8 +35,6 @@
 
         <!-- displaying News articles -->
          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-
-                 <!-- <button type="button" class="btn btn-success btn-sm m-1" > Delete</button> -->
                  <div class="portfolio-wrap ">
                      <div class="portfolio-wrap hovereffect">
                          <a class="img-overlay" data-toggle="modal" data-target="#{{image.id}}" style="width:100%">
@@ -56,11 +51,12 @@
          
     {% empty %}
 </div>
-    <div class="row">
-        <h2 class="text-center"> No image </h2>
-
-    </div>
+  <div class="row">
+    <h2 class="text-center"> No image </h2>
+</div>
     {% endfor %}
+ 
+    
 {% for image in images %}
     <div class="modal fade" id="{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -95,7 +91,6 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Copy Link</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
                 </div>
             </div>
         </div>
