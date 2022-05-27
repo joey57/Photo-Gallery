@@ -1,3 +1,4 @@
+from unicodedata import category
 from django.shortcuts import render
 from django.http  import HttpResponse, Http404
 from .models import Image, Category, Location
@@ -8,7 +9,7 @@ def index(request):
     images = Image.get_all_images()
     locations = Location.objects.all()
 
-    return render(request, 'index.html', {'images':images, 'images':images, 'locations':locations })    
+    return render(request, 'index.html', {'images':images, 'locations':locations })    
 
 def search_image(request):
     title = 'Search'
@@ -31,12 +32,15 @@ def location_filter(request, image_location):
     title = f'{location} Photos'
     return render(request, 'location.html', {'title':title, 'images':images, 'locations':locations, 'location':location})
 
-def single(request,image_id):
+def single(request,image_id, category_name):
+    title = 'Image'
+    locations =Location.objects.all()
+    image_category = Image.objects.filter(image_category__name = category_name)
     try:
         image = Image.objects.get(id = image_id)
     except:
         raise Http404()
-    return render(request,"index.html",{"image":image})
+    return render(request,"single.html",{"title":title, "image":image, "locations":locations, "image_category":image_category})
 
 
 
