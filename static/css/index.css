@@ -44,8 +44,8 @@ div.container.image{
       font-size: 1em;
       color: #fff;
       font-weight: 600;
-      padding: 1em 2em;
-      background:#d18a19;
+      padding: 2em;
+      background:#d11919;
   }
   .banner a:hover {
       color: #fff;
@@ -71,10 +71,6 @@ div.container.image{
 .banner{
   background: url(../assests/cover.jpg) no-repeat 0px 0px;
   background-size:cover;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
-  -ms-background-size: cover;
-  -moz-background-size: cover;
   min-height: 400px;
 }  
 form.form{
@@ -160,10 +156,6 @@ left: 10%;
 top: 10%;
 border-bottom: 1px solid #FFF;
 border-top: 1px solid #FFF;
--webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-transition: opacity 0.35s, transform 0.35s;
--webkit-transform: scale(0,1);
--ms-transform: scale(0,1);
 transform: scale(0,1);
 }
 .hovereffect:hover .overlay {
