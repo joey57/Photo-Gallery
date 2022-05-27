@@ -8,7 +8,7 @@
 <div class="banner">
   <div class="cover">
     <div class="container image">
-      <h2 id="category">Welcome to Gall-Art</h2>
+      <h2 id="category" style="color: bisque;">Welcome to Gall-Art</h2>
       <form class="form" role="search" action="{% url 'search_image' %}">
 
         <div class="input-group">
@@ -17,14 +17,14 @@
          </div>
       </form>
       <p>When words become unclear, I shall focus with photographs. When images become inadequate, I shall be content with silence.</p>
-      <a href="#gallery">VIEW GALLERY</a>
+      <a href="#category">VIEW GALLERY</a>
       </div>
       </div>
   </div>
 <!--End landing section-->   
 <br>
 <!--Display images-->
-<div class="container">
+<div class="container wrap">
   <div class="row">
   {% for image in images %}
 <!-- displaying Images -->
@@ -32,7 +32,6 @@
   <div class="portfolio-wrap ">
       <div class="portfolio-wrap hovereffect">
           <a class="img-overlay" data-toggle="modal" data-target="#{{image.id}}" style="width:100%">
-              <!-- <img src="images/1.jpg" alt=" " class="img-responsive"> -->
               <img src="{{image.pic.url}}" href="" class="image" alt="Image" >
               <div class="overlay">
                   <h4>{{image.name}}</h4>
