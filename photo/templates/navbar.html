@@ -8,8 +8,8 @@
   <title></title>
   {% block styles %}
    {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
   {% endblock %}
  </head>
   <body>
@@ -32,6 +32,29 @@
       </div>
   </nav>
   <!-- End of main navbar -->
+
+   <!-- Location side navebar -->
+   <div id="sideNav" class="nav-side">
+    <a href="javascript:void(0)" class="close-nav">&times;</a>
+    <a>Locations:</a>
+    {% for location in locations %}
+    <a href="/location/{{location.id}}">{{location.name}}</a>
+    {% empty %}
+    <a href="#">There are no locations</a>
+    {% endfor %}
+    <hr>
+    <div class="locations">
+    </div>
+    <div class="footer">
+        <div class="row">
+            <div class="col-md-12">
+                <p>Copyright &copy; 2018 All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End of side navbar -->
 
 <!-- End of side navbar -->
 
