@@ -14,84 +14,90 @@
         <div class="input-group">
           <input type="text" class="form-control" placeholder="&#xf3ee; Search by category" name="image_category">
           <br>
-         </div>
+        </div>
       </form>
-      <p>When words become unclear, I shall focus with photographs. When images become inadequate, I shall be content with silence.</p>
+      <p>When words become unclear, I shall focus with photographs. When images become inadequate, I shall be content
+        with silence.</p>
       <a href="#category">VIEW GALLERY</a>
-      </div>
-      </div>
+    </div>
   </div>
-<!--End landing section-->   
+</div> 
+<!--End landing section-->
 <br>
 <!--Display images-->
 <div class="container wrap">
   <div class="row">
-  {% for image in images %}
-<!-- displaying Images -->
-<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-  <div class="portfolio-wrap ">
-      <div class="portfolio-wrap hovereffect">
-          <a  href="" class="img-overlay" data-toggle="modal" data-target="#myModal" style="width:100%">
-              <img src="{{image.pic.url}}" href="" class="image" alt="Image" >
-              <div class="overlay">
-                  <h4>{{image.name}}</h4>
-              </div>
+    {% for image in images %}
+    <!-- displaying Images -->
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+      <div class="portfolio-wrap ">
+        <div class="portfolio-wrap hovereffect">
+          <a href="" class="img-overlay" data-toggle="modal" data-target="#myModal" style="width:100%">
+            <img src="{{image.pic.url}}" href="" class="image" alt="Image">
+            <div class="overlay">
+              <h4>{{image.name}}</h4>
+            </div>
           </a>
+        </div>
       </div>
-  </div>
-</div>
- 
+    </div> 
 
-{% for image in images %} 
-<!-- Button trigger modal -->
-<!-- <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+
+    {% for image in images %}
+    <!-- Button trigger modal -->
+    <!-- <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
   <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">See Image
   </a>
 </div>  -->
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Image Post</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
-          <img src="{{image.pic.url}}" class="img-thumbnail" alt="Image"> 
+    <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Image Post</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="col-md-6">
-          <h4>Location</h4>
-          <p>{{image.image_location.name}}</p>
-          <h4>Category</h4>
-          <p>{{image.image_category.name}}</p>
-          <div class="">
-            <h2 class="desc">{{image.name}}</h2>
-            <p class="desc">{{image.description}}</p>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
+                <img src="{{image.pic.url}}" class="img-thumbnail" alt="Image">
+              </div>
+              <div class="col-md-6">
+                <h4>Location</h4>
+                <p>{{image.image_location.name}}</p>
+                <h4>Category</h4>
+                <p>{{image.image_category.name}}</p>
+                <div class="">
+                  <h2 class="desc">{{image.name}}</h2>
+                  <p class="desc">{{image.description}}</p>
+                </div>
+              </div>
+            </div>
           </div>
-         </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
     </div>
+    {% endfor %}
+
+    {% empty %}
+    <div class="row">
+      <h2 class="text-center"> No image </h2>
+    </div>
+    {% endfor %}
+
+    <!-- <div class="footer">
+  <div class="row">
+      <div class="col-md-12">
+          <p>Copyright &copy; 2022 All Rights Reserved</p>
+      </div>
   </div>
 </div>
-{% endfor %}       
-
-{% empty %}
-<div class="row">
- <h2 class="text-center"> No image </h2>
 </div>
-{% endfor %}
+</div>    -->
 
-</div>
-</div>   
-
-{% endblock %} 
-
-
+{% endblock %}
