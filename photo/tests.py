@@ -35,20 +35,12 @@ class ImageTestClass(TestCase):
 
   def test_filter_by_location(self):
     images = Image.filter_by_location('1') 
-    print(images)
     self.assertTrue(len(images) > 0)
 
   def test_search_by_category(self):
     images = Image.search_by_category('Fashion')
     self.assertTrue(len(images)> 0)
-
-  def test_update_image(self):
-    self.image.save_image()
-    image = Image.update_image(self.image.id, 'test update', 'my test', self.loc, self.cat)
-    upimage = Image.objects.filter(id = self.image.id)
-    print(upimage)
-    self.assertTrue(Image.name == 'test update')     
-
+      
 
 class LocationTestClass(TestCase):
   #setUp method
@@ -101,7 +93,7 @@ class CategoryTestClass(TestCase):
     category.update_category('Travel')
     category = Category.get_category_id(self.cat.id)
     self.assertTrue(category.name == 'Travel')
-       
+
 
 
 
