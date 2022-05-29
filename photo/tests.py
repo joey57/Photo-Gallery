@@ -5,7 +5,13 @@ from .models import Image, Category, Location
 class ImageTestClass(TestCase):
   #setUp method
   def setUp(self):
-    self.image = Image(name = 'test', description = 'desc test', image_location = 'Africa', image_category = 'Fashion')
+    self.cat = Category(name = 'Fashion')
+    self.cat.save_category()
+
+    self.loc = Location(name = 'Africa')
+    self.loc.save_location()
+
+    self.image = Image(name = 'test', description = 'desc test', image_location = self.loc, image_category = self.cat)
     self.image.save_image()
 
   def test_instance(self):
