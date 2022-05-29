@@ -33,9 +33,9 @@
   <!-- End of main navbar -->
 
   <!-- Location side navebar -->
-  <div id="sideNav" class="navbar nav-side">
+  <div id="sideNav" class="navbar nav-side navbar-dark bg-dark" >
     <div class="container navigation header_right wow animate__animated anaimate__fadeInLeft" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
-    <a class="navbar-brand" style="color: black">Locations</a>
+    <a class="navbar-brand" style="color: white">Locations</a>
     {% for location in locations %}
     <a href="/location/{{location.id}}">{{location.name}}</a>
     {% empty %}
