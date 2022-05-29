@@ -24,7 +24,7 @@ Activate virtual environment using python as default handler
 For windows users use this to activa your environment
    ` source venv/Scripts/active`    
 ####  Install dependancies
-Install dependancies that will create an environment for the app to run `pip3install -r requirements.txt`
+Install dependancies that will create an environment for the app to run `pip install -r requirements.txt`
 ####  Create the Database
     - psql
     - CREATE DATABASE <DBNAME>;
