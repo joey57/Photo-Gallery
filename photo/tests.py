@@ -42,6 +42,7 @@ class ImageTestClass(TestCase):
     self.assertTrue(len(images)> 0)
 
   def test_update_image(self):
+    self.image.save_image()
     image = Image.update_image(self.image.id, 'test update', 'my test', self.loc, self.cat)
     upimage = Image.objects.filter(id = self.image.id)
     print(upimage)
@@ -57,6 +58,23 @@ class LocationTestClass(TestCase):
   def test_instance(self):
     self.assertTrue(isinstance(self.loc, Location))  
 
+  def test_save_method(self):
+    self.loc.save_location()
+    locations = Location.objects.all()
+    self.assertTrue(len(locations) > 0)
+
+  def test_delete_method(self):
+    self.loc.save_location()
+    self.loc.delete_location() 
+    location = Location.objects.all() 
+    self.assertTrue(len(location) == 0)
+
+  def test_update(self):
+    location = Location.get_location_id(self.loc.id)
+    location.update_location('Donholm')
+    location = Location.get_location_id(self.loc.id)
+    self.assertTrue(location.name == 'Donholm')
+    
 class CategoryTestClass(TestCase):
   # set up method 
   def setUp(self):
