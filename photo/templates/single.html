@@ -14,7 +14,7 @@
                   <input type="text" class="form-control" placeholder="&#xf3ee; Search by category"name="image_category">
                   <br>
                  </div>
-                 <small>Trending searches: fashion, travel</small>
+                 <small>Search for: fashion, travel</small>
               </form>
           </div>
       </div>
@@ -27,7 +27,7 @@
          <div class="col-md-8">
              <div class="portfolio-wrap ">
                  <div class="portfolio-wrap">
-                     <a class="img-overlay" data-toggle="modal" data-target="#{{image.id}}" style="width:100%">
+                     <a class="img-overlay" data-bs-toggle="modal" data-bs-target="#{{image.id}}" style="width:100%">
                          <img src="{{image.pic.url}}" href="" class="image" alt="Image" >
                      </a>
                  </div>
@@ -52,7 +52,7 @@
       <div class="portfolio-wrap ">
         <div class="portfolio-wrap hovereffect">
           <a class="img-overlay" data-bs-toggle="modal" data-bs-target="#{{image.id}}" style="width:100%" >
-          <img src="{{image.pic.url}}" href="" class="image" alt="Image" >
+          <img src="{{image.image_pic.url}}" href="" class="image" alt="Image" >
           <div class="overlay">
           <h4><a href="/image/{{image.image_category.name}}/{{image.id}}">{{image.name}}
          </a>
