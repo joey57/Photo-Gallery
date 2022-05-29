@@ -20,9 +20,9 @@ Gall-art is a photo gallery to display beautiful pictures and art. Users can vie
 #### Clone the Repo
 ####  Activate virtual environment
 Activate virtual environment using python as default handler
-    `virtualenv -p /usr/bin/python venv && source venv/bin/activate`
+    `virtualenv -p /usr/bin/python virtual && source venv/bin/activate`
 For windows users use this to activa your environment
-   ` source venv/Scripts/active`    
+   ` source virtual/Scripts/activate`    
 ####  Install dependencies
 Install dependancies that will create an environment for the app to run `pip install -r requirements.txt`
 ####  Create the Database
