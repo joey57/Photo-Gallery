@@ -7,7 +7,7 @@ urlpatterns=[
   path('', views.index , name = 'index'),
   path('search/', views.search_image, name = 'search_image'),
   re_path('location/(?P<image_location>\d+)', views.location_filter, name = 'location_filter'),
-  re_path('image/(<?Pcategory_name>\w+)/(?P<image_id>\d+)', views.single, name = 'single'),
+  re_path('image/(\d+)', views.single, name = 'single'),
 ]
 if settings.DEBUG:
   urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
