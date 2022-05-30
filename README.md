@@ -11,6 +11,7 @@ Gall-art is a photo gallery to display beautiful pictures and art. Users can vie
 - Admin can upload images from django admin dashboard
 
 ## Live site
+live link (https://photog-art.herokuapp.com/)
 
 ## Technologies used
 * Django Framework - used to create the application. 
