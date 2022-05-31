@@ -28,7 +28,7 @@
          <div class="col-md-8">
              <div class="portfolio-wrap ">
                  <div class="portfolio-wrap">
-                     <a class="img-overlay" data-bs-toggle="modal" data-bs-target="#{{image.id}}" style="width:100%">
+                     <a href="{% url 'single' image.id %}" class="img-overlay" data-bs-toggle="modal" data-bs-target="#{{image.id}}" style="width:100%">
                          <img src="{{image.pic.url}}" href="" class="image" alt="Image" >
                      </a>
                  </div>
